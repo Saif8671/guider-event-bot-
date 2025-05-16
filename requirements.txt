@@ -1,0 +1,17 @@
+streamlit
+PyMuPDF
+pdfminer.six
+beautifulsoup4
+tqdm
+faiss-cpu
+openai
+numpy
+python-dotenv
+requests
+PyPDF2
+pandas
+matplotlib
+pillow
+nltk
+google-generativeai
+
