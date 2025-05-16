@@ -1,0 +1,3 @@
+├── resumes/                # Uploaded resumes
+│   ├── agenda.pdf              # Uploaded agenda file
+│   └── speaker_profiles/      # Extracted speaker details

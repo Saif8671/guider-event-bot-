@@ -1,0 +1,37 @@
+John Doe
+📞 (123) 456-7890 | 📧 john.doe@example.com | 🌐 www.johndoe.dev | 📍 San Francisco, CA
+🔗 LinkedIn | GitHub
+
+Professional Summary
+Detail-oriented and innovative Software Engineer with 4+ years of experience developing scalable web applications and data-driven solutions. Strong background in full-stack development, cloud infrastructure, and cross-functional team collaboration.
+
+Technical Skills
+Languages: Python, JavaScript, Java, SQL
+
+Frameworks: React, Node.js, Flask, Django
+
+Tools & Platforms: AWS, Docker, Git, Kubernetes, Jenkins, PostgreSQL
+
+Other: REST APIs, GraphQL, Agile/Scrum, Test-Driven Development
+
+Professional Experience
+Software Engineer
+ABC Tech Solutions, San Francisco, CA
+Aug 2021 – Present
+
+Designed and implemented a real-time dashboard using React and Flask, improving client reporting efficiency by 35%.
+
+Led migration of backend services to AWS Lambda, reducing infrastructure costs by 25%.
+
+Collaborated with data scientists to integrate machine learning models into a recommendation system.
+
+Junior Web Developer
+BrightApps Inc., San Jose, CA
+Jun 2019 – Jul 2021
+
+Built and maintained internal tools using Django and Vue.js, reducing manual tasks by 40%.
+
+Automated testing processes with Selenium and Jenkins, increasing code reliability.
+
+Participated in UI/UX redesign project that improved user satisfaction by 20%.
+
