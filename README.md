@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:f59e0b&height=200&section=header&text=EventMaster%20AI&fontSize=52&fontColor=ffffff&fontAlignY=38&desc=Your%20Intelligent%20Event%20Companion&descSize=18&descAlignY=58" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:f59e0b&height=200&section=header&text=UNDERMAINTANANCEEventMaster%20AI&fontSize=52&fontColor=ffffff&fontAlignY=38&desc=Your%20Intelligent%20Event%20Companion&descSize=18&descAlignY=58" width="100%"/>
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_App-f59e0b?style=for-the-badge&logo=streamlit&logoColor=white)](#)
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
