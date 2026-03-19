@@ -27,3 +27,9 @@ class Ticket(Base):
     event = relationship("Event", back_populates="tickets")
     rsvps = relationship("RSVP", back_populates="ticket")
     orders = relationship("Order", back_populates="ticket")
+
+    @property
+    def remaining_quantity(self) -> int:
+        if self.quantity_total <= 0:
+            return 0
+        return max(self.quantity_total - self.quantity_sold, 0)

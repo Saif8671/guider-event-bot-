@@ -3,6 +3,7 @@ from uuid import uuid4
 from fastapi import HTTPException, status
 from sqlalchemy import and_, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import selectinload
 
 from app.models import Event, User
 from app.schemas.event import EventCreate, EventUpdate
@@ -39,6 +40,7 @@ async def create_event(db: AsyncSession, *, organizer: User, payload: EventCreat
     db.add(event)
     await db.commit()
     await db.refresh(event)
+    event.tickets = []
     return event
 
 
@@ -52,7 +54,7 @@ async def list_events(
     limit: int = 20,
     offset: int = 0,
 ) -> list[Event]:
-    stmt = select(Event)
+    stmt = select(Event).options(selectinload(Event.tickets))
     conditions = []
     if published_only:
         conditions.append(Event.status == "published")
@@ -71,7 +73,7 @@ async def list_events(
 
 
 async def get_event_or_404(db: AsyncSession, event_id: str) -> Event:
-    result = await db.execute(select(Event).where(Event.id == event_id))
+    result = await db.execute(select(Event).options(selectinload(Event.tickets)).where(Event.id == event_id))
     event = result.scalar_one_or_none()
     if event is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Event not found")
@@ -94,4 +96,3 @@ async def update_event(db: AsyncSession, *, event: Event, payload: EventUpdate) 
 async def delete_event(db: AsyncSession, *, event: Event) -> None:
     await db.delete(event)
     await db.commit()
-

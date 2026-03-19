@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from pydantic import BaseModel, ConfigDict, EmailStr
+from pydantic import BaseModel, ConfigDict, EmailStr, Field
 
 
 class APIModel(BaseModel):
@@ -38,6 +38,6 @@ class EventRead(APIModel):
     status: str
     capacity: int
     is_featured: bool
+    tickets: list["TicketRead"] = Field(default_factory=list)
     created_at: datetime | None = None
     updated_at: datetime | None = None
-

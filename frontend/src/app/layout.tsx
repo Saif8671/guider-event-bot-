@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Event Platform",
-  description: "Next.js frontend for the event platform MVP."
+  description: "Event discovery, login, creation, RSVP, and ticket purchase flows."
 };
 
 export default function RootLayout({
@@ -17,4 +17,3 @@ export default function RootLayout({
     </html>
   );
 }
-

@@ -25,12 +25,17 @@ Monorepo scaffold for a modern event platform with:
    cd backend
    alembic upgrade head
    ```
-4. Run the backend:
+4. Seed demo data:
+   ```bash
+   cd backend
+   python -m app.seed
+   ```
+5. Run the backend:
    ```bash
    cd backend
    python -m uvicorn app.main:app --reload
    ```
-5. Run the frontend:
+6. Run the frontend:
    ```bash
    cd frontend
    npm install
@@ -44,3 +49,9 @@ Monorepo scaffold for a modern event platform with:
 - Public events: `GET /api/v1/events`
 - Auth: `POST /api/v1/auth/signup`, `POST /api/v1/auth/login`
 - Event CRUD: `POST /api/v1/events`, `PATCH /api/v1/events/{id}`, `DELETE /api/v1/events/{id}`
+- RSVP and ticketing: `POST /api/v1/events/{id}/rsvps`, `POST /api/v1/events/{id}/tickets`, `POST /api/v1/events/{id}/tickets/{ticket_id}/purchase`
+
+## Demo login
+
+- Organizer: `organizer@example.com` / `password123`
+- Attendee: `attendee@example.com` / `password123`
