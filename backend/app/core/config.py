@@ -13,9 +13,13 @@ class Settings(BaseSettings):
     jwt_secret: str = Field(default="change-me")
     jwt_access_token_expires_minutes: int = 60
     jwt_refresh_token_expires_days: int = 30
+    cors_origins: str = "http://localhost:3000"
+
+    @property
+    def cors_origin_list(self) -> list[str]:
+        return [origin.strip() for origin in self.cors_origins.split(",") if origin.strip()]
 
 
 @lru_cache
 def get_settings() -> Settings:
     return Settings()
-

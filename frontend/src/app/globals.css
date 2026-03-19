@@ -188,6 +188,51 @@ select {
   line-height: 1.8;
 }
 
+.event-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.event-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--border);
+}
+
+.event-row h3 {
+  margin: 0 0 6px;
+}
+
+.event-row p,
+.empty-state {
+  margin: 0;
+  color: var(--muted);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(15, 118, 110, 0.1);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status-pill.featured {
+  background: rgba(124, 58, 237, 0.12);
+  color: var(--accent-2);
+}
+
 @media (max-width: 900px) {
   .hero,
   .section-grid {
@@ -202,4 +247,3 @@ select {
     grid-template-columns: 1fr;
   }
 }
-

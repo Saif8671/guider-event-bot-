@@ -1,3 +1,5 @@
+import { getPublishedEvents } from "@/lib/api";
+
 const highlights = [
   {
     title: "Discovery-first UX",
@@ -17,7 +19,9 @@ const highlights = [
   }
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const events = await getPublishedEvents();
+
   return (
     <main className="shell">
       <header className="topbar">
@@ -59,6 +63,34 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section">
+        <div className="panel section-card">
+          <h2>Upcoming events</h2>
+          {events.length > 0 ? (
+            <div className="event-list">
+              {events.map((event) => (
+                <article className="event-row" key={event.id}>
+                  <div>
+                    <h3>{event.title}</h3>
+                    <p>
+                      {event.category} - {event.location_type}
+                      {event.location_name ? ` - ${event.location_name}` : ""}
+                    </p>
+                  </div>
+                  <span className={`status-pill ${event.is_featured ? "featured" : ""}`}>
+                    {event.is_featured ? "Featured" : "Public"}
+                  </span>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p className="empty-state">
+              No published events yet. Create one in the backend and publish it to see it here.
+            </p>
+          )}
+        </div>
+      </section>
+
       <section className="section section-grid">
         <article className="panel section-card">
           <h2>Frontend</h2>
@@ -88,4 +120,3 @@ export default function HomePage() {
     </main>
   );
 }
-

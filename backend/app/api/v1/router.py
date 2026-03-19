@@ -13,4 +13,3 @@ api_router.include_router(orders.router)
 api_router.include_router(invitations.router)
 api_router.include_router(checkin.router)
 api_router.include_router(admin.router)
-

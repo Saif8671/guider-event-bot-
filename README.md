@@ -20,15 +20,27 @@ Monorepo scaffold for a modern event platform with:
    ```bash
    docker compose up -d
    ```
-3. Run the backend:
+3. Apply database migrations:
+   ```bash
+   cd backend
+   alembic upgrade head
+   ```
+4. Run the backend:
    ```bash
    cd backend
    python -m uvicorn app.main:app --reload
    ```
-4. Run the frontend:
+5. Run the frontend:
    ```bash
    cd frontend
    npm install
    npm run dev
    ```
 
+## API
+
+- Health: `http://localhost:8000/health`
+- Docs: `http://localhost:8000/docs`
+- Public events: `GET /api/v1/events`
+- Auth: `POST /api/v1/auth/signup`, `POST /api/v1/auth/login`
+- Event CRUD: `POST /api/v1/events`, `PATCH /api/v1/events/{id}`, `DELETE /api/v1/events/{id}`
