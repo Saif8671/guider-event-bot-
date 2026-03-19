@@ -4,6 +4,33 @@ This repository currently contains a single-file UI prototype in `event-flow-app
 The prototype already demonstrates the end-to-end event lifecycle, so this document turns
 that flow into a production system design and implementation pipeline.
 
+## Backend Split
+
+This repo now treats the backend as two coordinated services:
+
+1. `Luma` handles everything before the event:
+   - event creation and publishing
+   - registration and approval
+   - ticket issuance and QR generation
+   - reminders, emails, and receipts
+   - pre-event guest management
+2. `AI Bot` handles everything during and after the event:
+   - QR scanning at the gate
+   - check-in verification
+   - live event assistance
+   - feedback collection
+   - attendance and incident tracking
+
+The authoritative data for events, registrations, and tickets lives in `Luma`.
+The AI bot consumes that data and writes operational state back through a narrow API.
+
+See:
+
+- `docs/backend-architecture.md`
+- `docs/database-schema.sql`
+- `docs/api-contract.yaml`
+- `docs/repo-structure.md`
+
 ## 1. Product Goal
 
 EventFlow is an event operations platform that lets an organizer:
